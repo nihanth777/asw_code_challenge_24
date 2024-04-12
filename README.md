@@ -14,21 +14,23 @@ Please write a device driver that implements the following API:
 - Enable or disable the interrupt pin
 - Read the output data of a specified axis
 
-## Development
-You are provided this minimal repository, `aac-code-challenge`, please perform
-your work on branch `<candidate_name>`
-
-Documentation can be found in `aac-code-challenge/doc`
-
-Once complete, please repackage and email back this repo to your interviewers
-
-## Scope
-You shouldn't need to spend more than a couple of hours on the task.
-
-This is not a closed book assessment.
-
 ## Extra Thoughts
 If you have time, answer the following questions:
-- What changes you would make to this interfaces for use in an RTOS
-environment?
-- How might the I2C API be improved
+
+What changes you would make to this interfaces for use in an RTOS environment?
+How might the I2C API be improved
+
+## Implementation
+A new file is created 'LIS3MDLTR.c' as a device driver according to the requirements mentioned the above task 
+and other files are left as they were
+
+i2c.h contains i2c read and write functions which are used in the LIS3MDLTR.c for setting and gettings details 
+from the registers according to the data sheet in the doc/lis3mdl.pdf . 
+
+The code is well commented and modular so it can be integrated to further application and work on this sensor.
+
+There is a comment section at the end of the file regarding the extra thoughts which are here below as well
+"for use in RTOS environment, we can improve by adding asynchronous support and make it more clear in the documentation regarding the 
+default values that needs no changing"
+
+
